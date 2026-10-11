@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Prueba de Transmisión Local - Locomotion 2.0</title>
+        <!-- Video.js CSS -->
+        <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+        <style>
+            body {
+                background-color: #0d0d0d;
+                color: #00ff66;
+                font-family: monospace;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .player-container {
+                border: 3px solid #00ff66;
+                box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+                padding: 10px;
+                background: #000;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>// SEÑAL EN VIVO - CANAL DE PRUEBA</h2>
+
+        <div class="player-container">
+            <video
+                id="my-video"
+                class="video-js vjs-default-skin"
+                controls
+                autoplay
+                preload="auto"
+                width="854"
+                height="480">
+                <!-- Ruta corregida apuntando a la subcarpeta de Nginx -->
+              <!--  <source src="http://localhost:8080/hls/stream1/index.m3u8" type="application/x-mpegURL" />-->
+                <source
+                    src="https://rid-abraham-sms-springer.trycloudflare.com/hls/stream1/index.m3u8"
+                    type="application/x-mpegURL" />
+            </video>
+        </div>
+
+        <!-- Video.js JS -->
+        <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+    </body>
+</html>
